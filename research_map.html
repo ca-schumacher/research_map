@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_9dc8308f8f6c4b3eb26b90932db348e8 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css"/>
+    
+                <style>
+                    #scroll_zoom_toggler_5ffcd9bda76c4aea88af0d9e1a10a6ac {
+                        position:absolute;
+                        width:35px;
+                        bottom:10px;
+                        height:35px;
+                        left:10px;
+                        background-color:#fff;
+                        text-align:center;
+                        line-height:35px;
+                        vertical-align: middle;
+                        }
+                </style>
+            
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_9dc8308f8f6c4b3eb26b90932db348e8" ></div>
+    
+            <img id="scroll_zoom_toggler_5ffcd9bda76c4aea88af0d9e1a10a6ac" alt="scroll"
+                 src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/png/512/arrow-move.png"
+                 style="z-index: 999999"
+                 onclick="map_9dc8308f8f6c4b3eb26b90932db348e8.toggleScroll()">
+            </img>
+            
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_9dc8308f8f6c4b3eb26b90932db348e8 = L.map(
+        'map_9dc8308f8f6c4b3eb26b90932db348e8', {
+        center: [30, 0],
+        zoom: 2.1,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: true,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+
+    
+    var tile_layer_b4ea839048664eae93e692f51ebcb6d0 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 1.7,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+    
+            var marker_cluster_a08ba4724a524ae781509e5e9721f64f = L.markerClusterGroup({});
+            map_9dc8308f8f6c4b3eb26b90932db348e8.addLayer(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+            
+    
+        var marker_8b2b1712381c4d3c8198878b660cffa9 = L.marker(
+            [49.874848, 8.656081],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_a69da935ab864f40a6ee20e027ca5840 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_4d0ee6031af54bfb8ed4e26da64699d0 = $(`<div id="html_4d0ee6031af54bfb8ed4e26da64699d0" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> Annual Congress of the German Biomechanics Section </h4> <h5> 'Model-based Investigation of Neuromuscular Adaptation Mechanisms with different Leg Elasticity' </h5> <h5> Humboldt-Universität Berlin <br> 26-28 Mar 2015 </h5></div>`)[0];
+                popup_a69da935ab864f40a6ee20e027ca5840.setContent(html_4d0ee6031af54bfb8ed4e26da64699d0);
+            
+
+            marker_8b2b1712381c4d3c8198878b660cffa9.bindPopup(popup_a69da935ab864f40a6ee20e027ca5840)
+            ;
+
+            
+        
+    
+        var marker_6f1fb4afab5941a0962b0d7dfac434bc = L.marker(
+            [42.358561, -71.091907],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_a68a80dc18c84de19d5ead5bfb57bc0d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_a180e3b697504e949ca970d9ee47cfbd = $(`<div id="html_a180e3b697504e949ca970d9ee47cfbd" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> 7th Int. Symposium on Adaptive Motions of Animals and Machine </h4> <h5> 'Optimal Leg Muscle Function for Running and Jumping Tasks' </h5> <h5> Massachusetts Institute of Technology (MIT) <br> 21-25 Jun 2015 </h5></div>`)[0];
+                popup_a68a80dc18c84de19d5ead5bfb57bc0d.setContent(html_a180e3b697504e949ca970d9ee47cfbd);
+            
+
+            marker_6f1fb4afab5941a0962b0d7dfac434bc.bindPopup(popup_a68a80dc18c84de19d5ead5bfb57bc0d)
+            ;
+
+            
+        
+    
+        var marker_7e1be2bdf8324aedb3ff52f6c26ad9c6 = L.marker(
+            [51.397994, 12.399829],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_f6669a036dcf48498400641f86d7901b = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_a3add0eae5a84df990b78406444d6671 = $(`<div id="html_a3add0eae5a84df990b78406444d6671" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> DGR-Days </h4> <h5> 'System Identification of a Feed-forward controlled Robotic Leg to mimic Human Running Gaits' </h5> <h5> RoboCup 2016 <br> 29-30 Jun 2016 </h5></div>`)[0];
+                popup_f6669a036dcf48498400641f86d7901b.setContent(html_a3add0eae5a84df990b78406444d6671);
+            
+
+            marker_7e1be2bdf8324aedb3ff52f6c26ad9c6.bindPopup(popup_f6669a036dcf48498400641f86d7901b)
+            ;
+
+            
+        
+    
+        var marker_3164558c2b614c17b5733b675da37a9e = L.marker(
+            [49.874848, 8.656081],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_0ab53ed58a3a4e4d9987807d27fc52a7 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_90a1e2d2c18d413f8da7efd71749179c = $(`<div id="html_90a1e2d2c18d413f8da7efd71749179c" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> 11th joint Conference on Motor Control & Learning, Biomechanics & Training </h4> <h5> 'Neuromuscular model mimics walking gaits of a unilateral trans-tibial amputee' </h5> <h5> Technische Universität Darmstadt  <br> 20-30 Sep 2016 </h5></div>`)[0];
+                popup_0ab53ed58a3a4e4d9987807d27fc52a7.setContent(html_90a1e2d2c18d413f8da7efd71749179c);
+            
+
+            marker_3164558c2b614c17b5733b675da37a9e.bindPopup(popup_0ab53ed58a3a4e4d9987807d27fc52a7)
+            ;
+
+            
+        
+    
+        var marker_e20049a12ecb4ca9a31b5e5e355e4c96 = L.marker(
+            [49.874848, 8.656081],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_7e0bfa815bd54ffe980f04546f27f968 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_5630be865f4844fa9ddd30194f1c1ade = $(`<div id="html_5630be865f4844fa9ddd30194f1c1ade" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> 11th joint Conference on Motor Control & Learning, Biomechanics & Training </h4> <h5> 'Evaluation of Sensor Functionality for Acquiring the Relative Movement between Residual Limb and Prosthetic Socket' </h5> <h5> Technische Universität Darmstadt  <br> 20-30 Sep 2016 </h5></div>`)[0];
+                popup_7e0bfa815bd54ffe980f04546f27f968.setContent(html_5630be865f4844fa9ddd30194f1c1ade);
+            
+
+            marker_e20049a12ecb4ca9a31b5e5e355e4c96.bindPopup(popup_7e0bfa815bd54ffe980f04546f27f968)
+            ;
+
+            
+        
+    
+        var marker_9fc2232edc404ed48f92511674a6b206 = L.marker(
+            [49.413535, 8.7164],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_653a1096f3424cc0a7b66f0db13afe05 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_14f6a87411d44f60aded2ed4920a9294 = $(`<div id="html_14f6a87411d44f60aded2ed4920a9294" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> International Symposium on the Neuromechanics of Human Movement </h4> <h5> 'Gait pattern adaptations of a neuromuscular model describing walking of a unilateral transtibial amputee' </h5> <h5> University Heidelberg <br> 4-6 Oct 2016 </h5></div>`)[0];
+                popup_653a1096f3424cc0a7b66f0db13afe05.setContent(html_14f6a87411d44f60aded2ed4920a9294);
+            
+
+            marker_9fc2232edc404ed48f92511674a6b206.bindPopup(popup_653a1096f3424cc0a7b66f0db13afe05)
+            ;
+
+            
+        
+    
+        var marker_f0beddd98f134860bd015b2ac6e91c63 = L.marker(
+            [-33.917294, 18.428955],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_2ff9eea7cd45406095cd60e7ee4cd92c = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_73b23a24e76f4400946c9f88bc72acc6 = $(`<div id="html_73b23a24e76f4400946c9f88bc72acc6" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> ISPO World Congress </h4> <h5> 'Sensitivity Analysis of Socket Interaction Forces in Unilateral Transtibial Amputee Walking: A Neuromuscular Simulation Study' </h5> <h5> Cape Town International Convention Center <br> 8-11 May 2017 </h5></div>`)[0];
+                popup_2ff9eea7cd45406095cd60e7ee4cd92c.setContent(html_73b23a24e76f4400946c9f88bc72acc6);
+            
+
+            marker_f0beddd98f134860bd015b2ac6e91c63.bindPopup(popup_2ff9eea7cd45406095cd60e7ee4cd92c)
+            ;
+
+            
+        
+    
+        var marker_05ef1fa7bbbd421ba7731313e2eddbd1 = L.marker(
+            [-33.917294, 18.428955],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_39d991b262c947bbb4d55964374096e6 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_a1771b66843743249ad1da983958c767 = $(`<div id="html_a1771b66843743249ad1da983958c767" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> ISPO World Congress </h4> <h5> 'Feasibility Study Using an Orthosis: An Approach to Measuring the Relative Movement between Residual Limb and Prosthetic Socket in Dynamic Gait Situations' </h5> <h5> Cape Town International Convention Center <br> 8-11 May 2017 </h5></div>`)[0];
+                popup_39d991b262c947bbb4d55964374096e6.setContent(html_a1771b66843743249ad1da983958c767);
+            
+
+            marker_05ef1fa7bbbd421ba7731313e2eddbd1.bindPopup(popup_39d991b262c947bbb4d55964374096e6)
+            ;
+
+            
+        
+    
+        var marker_686290a52e664043ad79d83cdac8b3d9 = L.marker(
+            [43.078012, 141.34026],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_7cd33a617a6141e6ab72ab06272dfb03 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_f407f89a08cd40259ce3db5b2cede6e3 = $(`<div id="html_f407f89a08cd40259ce3db5b2cede6e3" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> 8th Int. Symposium on Adaptive Motions of Animals and Machine </h4> <h5> 'Feedback pathway compositions for hopping - influence of changes in body morphology and ground compliance' </h5> <h5> Hokkaido University <br> 27-30 Jun 2017 </h5></div>`)[0];
+                popup_7cd33a617a6141e6ab72ab06272dfb03.setContent(html_f407f89a08cd40259ce3db5b2cede6e3);
+            
+
+            marker_686290a52e664043ad79d83cdac8b3d9.bindPopup(popup_7cd33a617a6141e6ab72ab06272dfb03)
+            ;
+
+            
+        
+    
+        var marker_dab048933ffc43e0a2c10f97c8047fb4 = L.marker(
+            [51.541028, 9.937403],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_23005b8075314dcfb32ac5ec746f1480 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d1894da830ad44a8bdd0e8f23bbc8b93 = $(`<div id="html_d1894da830ad44a8bdd0e8f23bbc8b93" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> Bernstein Conference 2017 </h4> <h5> 'Sensor-motor maps for hopping – influence of changes in muscle properties' </h5> <h5> Georg-August-Universität Göttingen <br> 13-15 Sep 2017 </h5></div>`)[0];
+                popup_23005b8075314dcfb32ac5ec746f1480.setContent(html_d1894da830ad44a8bdd0e8f23bbc8b93);
+            
+
+            marker_dab048933ffc43e0a2c10f97c8047fb4.bindPopup(popup_23005b8075314dcfb32ac5ec746f1480)
+            ;
+
+            
+        
+    
+        var marker_3c23350a031a4313be857a3815a72389 = L.marker(
+            [35.618565, 139.778022],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_3637285276eb47c59c0cf4ae6d356248 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_f30b06c376474a2bafabad8ed168d7ff = $(`<div id="html_f30b06c376474a2bafabad8ed168d7ff" style="width: 100.0%; height: 100.0%;"> <h6> Poster Presentation </h6> <h4> International Research Forum on Biomechanics of Running-specific Prostheses (IBRSP2018) </h4> <h5> 'Dynamics of amputee long jump' </h5> <h5> AIST Tokyo <br> 21 Feb 2018 </h5></div>`)[0];
+                popup_3637285276eb47c59c0cf4ae6d356248.setContent(html_f30b06c376474a2bafabad8ed168d7ff);
+            
+
+            marker_3c23350a031a4313be857a3815a72389.bindPopup(popup_3637285276eb47c59c0cf4ae6d356248)
+            ;
+
+            
+        
+    
+        var marker_3876039470c04168ba1e0cd09d95490e = L.marker(
+            [30.413238, -87.209535],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_e35477702b0045f8b1e3915761daa7f5 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_c4c4e208f5dd4aa39da8a937179f6ca3 = $(`<div id="html_c4c4e208f5dd4aa39da8a937179f6ca3" style="width: 100.0%; height: 100.0%;"> <h6> Talk and Poster Presentation </h6> <h4> 13th Annual Dynamic Walking Conference </h4> <h5> 'Sensor-Motor Maps of a perturbed bipedal hopping model' </h5> <h5> Institute for Human and Machine Cognition (ihmc) <br> 21-24 May 2018 </h5></div>`)[0];
+                popup_e35477702b0045f8b1e3915761daa7f5.setContent(html_c4c4e208f5dd4aa39da8a937179f6ca3);
+            
+
+            marker_3876039470c04168ba1e0cd09d95490e.bindPopup(popup_e35477702b0045f8b1e3915761daa7f5)
+            ;
+
+            
+        
+    
+        var marker_9dfda16d7a65467c9dedee9f6f8c743d = L.marker(
+            [52.239817, 6.849999],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_ef7e86a9e79e47dea9bceaddc940cfaf = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_28c1a8e9d2ab437f9b2fdf6d0ec9e3c3 = $(`<div id="html_28c1a8e9d2ab437f9b2fdf6d0ec9e3c3" style="width: 100.0%; height: 100.0%;"> <h6> Paper Presentation </h6> <h4> 7th IEEE RAS/EMBS International Conference on Biomedical Robotics and Biomechatronics </h4> <h5> 'Force-Feedback Coordinates Stance and Balance Locomotor Subfunctions in Hopping' </h5> <h5> University of Twente <br> 26-29 Aug 2018 </h5></div>`)[0];
+                popup_ef7e86a9e79e47dea9bceaddc940cfaf.setContent(html_28c1a8e9d2ab437f9b2fdf6d0ec9e3c3);
+            
+
+            marker_9dfda16d7a65467c9dedee9f6f8c743d.bindPopup(popup_ef7e86a9e79e47dea9bceaddc940cfaf)
+            ;
+
+            
+        
+    
+        var marker_bbb3bfb5675b4ead82e187f94ecc7a94 = L.marker(
+            [52.239817, 6.849999],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_5f3d1065542a4b8886a6c5d4d68a395d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_c108237ca22f41ab9c41d8d60587e860 = $(`<div id="html_c108237ca22f41ab9c41d8d60587e860" style="width: 100.0%; height: 100.0%;"> <h6> Paper Presentation </h6> <h4> 7th IEEE RAS/EMBS International Conference on Biomedical Robotics and Biomechatronics </h4> <h5> 'A Movement Manipulator to Introduce Temporary and Local Perturbations in Human Hopping' </h5> <h5> University of Twente <br> 26-29 Aug 2018 </h5></div>`)[0];
+                popup_5f3d1065542a4b8886a6c5d4d68a395d.setContent(html_c108237ca22f41ab9c41d8d60587e860);
+            
+
+            marker_bbb3bfb5675b4ead82e187f94ecc7a94.bindPopup(popup_5f3d1065542a4b8886a6c5d4d68a395d)
+            ;
+
+            
+        
+    
+        var marker_1edec7d15bc744c1b9cccf5a4e3375cc = L.marker(
+            [64.123514, -21.800316],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_b058580a0c614a3597c80574c1322f34 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_73683ad418234e26aa0b7b27829c46d9 = $(`<div id="html_73683ad418234e26aa0b7b27829c46d9" style="width: 100.0%; height: 100.0%;"> <h6> Invited Talk </h6> <h4> Ossur hf </h4> <h5> 'Robotic Bipedal Walking Emulator as a novel Design Methodology for Hardware-in-the-loop Testing' </h5> <h5> Ossur Headquaters <br> 1 Dec 2015 </h5></div>`)[0];
+                popup_b058580a0c614a3597c80574c1322f34.setContent(html_73683ad418234e26aa0b7b27829c46d9);
+            
+
+            marker_1edec7d15bc744c1b9cccf5a4e3375cc.bindPopup(popup_b058580a0c614a3597c80574c1322f34)
+            ;
+
+            
+        
+    
+        var marker_0adc9242d86d4e6fb9e828ee45600e96 = L.marker(
+            [34.822146, 135.524285],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_995d2431a2724ef1976761840b1db98d = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_7711ef1650cf42c4baf11262234ee82a = $(`<div id="html_7711ef1650cf42c4baf11262234ee82a" style="width: 100.0%; height: 100.0%;"> <h6> Invited Talk </h6> <h4> Adaptive Robotics Lab </h4> <h5> 'Functional Reflex Composition in Hopping' </h5> <h5> Osaka University <br> 3 Jul 2017 </h5></div>`)[0];
+                popup_995d2431a2724ef1976761840b1db98d.setContent(html_7711ef1650cf42c4baf11262234ee82a);
+            
+
+            marker_0adc9242d86d4e6fb9e828ee45600e96.bindPopup(popup_995d2431a2724ef1976761840b1db98d)
+            ;
+
+            
+        
+    
+        var marker_82fc2f104b364f96bd62129ffef46bbe = L.marker(
+            [52.000844, 4.371367],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_f898956cec3d4fc4bfa32befda51011c = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_d7ca33bff19a4c5591bdaa565df35fb5 = $(`<div id="html_d7ca33bff19a4c5591bdaa565df35fb5" style="width: 100.0%; height: 100.0%;"> <h6> Invited Talk </h6> <h4> Biorobotics Lab </h4> <h5> 'Sensor-motor Maps in Hopping' </h5> <h5> Delft University of Technology <br> 20 Oct 2017 </h5></div>`)[0];
+                popup_f898956cec3d4fc4bfa32befda51011c.setContent(html_d7ca33bff19a4c5591bdaa565df35fb5);
+            
+
+            marker_82fc2f104b364f96bd62129ffef46bbe.bindPopup(popup_f898956cec3d4fc4bfa32befda51011c)
+            ;
+
+            
+        
+    
+        var marker_9dad6016057f40799f6d85a494534ce4 = L.marker(
+            [48.747028, 9.080576],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_37bb45cebb4f4d168d9177bb360bade3 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_8696cc9c85444d90a1b92855966dd6bc = $(`<div id="html_8696cc9c85444d90a1b92855966dd6bc" style="width: 100.0%; height: 100.0%;"> <h6> Invited Talk </h6> <h4> Dynamic Locomotion Group </h4> <h5> 'Embodiment in Hopping and Balance: Principles of Sensory Integration and Human Leg Design' </h5> <h5> Max Planck Institute for Intelligent Systems <br> 22 Feb 2018 </h5></div>`)[0];
+                popup_37bb45cebb4f4d168d9177bb360bade3.setContent(html_8696cc9c85444d90a1b92855966dd6bc);
+            
+
+            marker_9dad6016057f40799f6d85a494534ce4.bindPopup(popup_37bb45cebb4f4d168d9177bb360bade3)
+            ;
+
+            
+        
+    
+        var marker_546c405aaeaf4361a2b411c6591103ad = L.marker(
+            [50.095338, 8.661714],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_e7142b7ed9f4418ab378e1375b97e1bd = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_53701e26ae894af783c5721f7ee5f514 = $(`<div id="html_53701e26ae894af783c5721f7ee5f514" style="width: 100.0%; height: 100.0%;"> <h6> Invited Talk </h6> <h4> Cognitive Neuroscience Group </h4> <h5> 'The role of blending sensory pathways for generating goal directed movements' </h5> <h5> University Hospital Frankfurt <br> 5 May 2019 </h5></div>`)[0];
+                popup_e7142b7ed9f4418ab378e1375b97e1bd.setContent(html_53701e26ae894af783c5721f7ee5f514);
+            
+
+            marker_546c405aaeaf4361a2b411c6591103ad.bindPopup(popup_e7142b7ed9f4418ab378e1375b97e1bd)
+            ;
+
+            
+        
+    
+        var marker_6167ba8c95814d13a6c581065155e45c = L.marker(
+            [49.874848, 8.656081],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_aea7120a787e401ab4aab74a08c5924a = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_f67fa0601e8e4e29ba16046fe49f3374 = $(`<div id="html_f67fa0601e8e4e29ba16046fe49f3374" style="width: 100.0%; height: 100.0%;"> <h4> Technische Universität Darmstadt </h4> <h6> Locomotion Laboratory, <br> Insitute for Sport Science </h6> <h5> PhD <br> 2014-2019 </h5></div>`)[0];
+                popup_aea7120a787e401ab4aab74a08c5924a.setContent(html_f67fa0601e8e4e29ba16046fe49f3374);
+            
+
+            marker_6167ba8c95814d13a6c581065155e45c.bindPopup(popup_aea7120a787e401ab4aab74a08c5924a)
+            ;
+
+            
+        
+    
+        var marker_56cd3cacf336416dba3dd07401d609d5 = L.marker(
+            [52.000844, 4.371367],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(marker_cluster_a08ba4724a524ae781509e5e9721f64f);
+        
+    
+            var popup_3fae184fd5b148f0921eeab2923f97d3 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_abc5c781ae0949018ba42e263da7ad68 = $(`<div id="html_abc5c781ae0949018ba42e263da7ad68" style="width: 100.0%; height: 100.0%;"> <h4> Delft University of Technology </h4> <h6> Biorobotics Lab <br> Mechanical, Maritime and Materials Engineering </h6> <h5> Guest Researcher <br> Apr-Sep 2018 </h5></div>`)[0];
+                popup_3fae184fd5b148f0921eeab2923f97d3.setContent(html_abc5c781ae0949018ba42e263da7ad68);
+            
+
+            marker_56cd3cacf336416dba3dd07401d609d5.bindPopup(popup_3fae184fd5b148f0921eeab2923f97d3)
+            ;
+
+            
+        
+    
+            var layer_control_73cdf4f1ecf0430aa2aa967cc37752c9 = {
+                base_layers : { "openstreetmap" : tile_layer_b4ea839048664eae93e692f51ebcb6d0, },
+                overlays : {  }
+                };
+            L.control.layers(
+                layer_control_73cdf4f1ecf0430aa2aa967cc37752c9.base_layers,
+                layer_control_73cdf4f1ecf0430aa2aa967cc37752c9.overlays,
+                {position: 'topright',
+                 collapsed: true,
+                 autoZIndex: true
+                }).addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+            
+        
+    
+                var poly_line_00a358329874403e89d1377b0d826039 = L.polyline(
+                    [[49.874848, 8.656081], [51.3532279, 10.7705511], [52.7062073, 12.8850211], [53.9447433, 14.9994912], [55.0787718, 17.1139613], [56.1172562, 19.2284313], [57.0682517, 21.3429014], [57.9389774, 23.4573715], [58.7358889, 25.5718415], [59.4647506, 27.6863116], [60.1307021, 29.8007817], [60.7383212, 31.9152517], [61.29168, 34.0297218], [61.794396, 36.1441919], [62.2496773, 38.2586619], [62.6603634, 40.373132], [63.0289598, 42.4876021], [63.3576696, 44.6020721], [63.64842, 46.7165422], [63.9028861, 48.8310123], [64.1225108, 50.9454823], [64.3085216, 53.0599524], [64.4619454, 55.1744225], [64.5836203, 57.2888925], [64.6742052, 59.4033626], [64.7341871, 61.5178327], [64.7638871, 63.6323027], [64.7634637, 65.7467728], [64.7329147, 67.8612429], [64.6720769, 69.9757129], [64.5806248, 72.090183], [64.4580665, 74.2046531], [64.3037382, 76.3191231], [64.1167966, 78.4335932], [63.8962095, 80.5480633], [63.6407433, 82.6625333], [63.3489489, 84.7770034], [63.0191446, 86.8914735], [62.6493955, 89.0059435], [62.2374905, 91.1204136], [61.780915, 93.2348837], [61.27682, 95.3493537], [60.7219861, 97.4638238], [60.1127838, 99.5782939], [59.4451274, 101.6927639], [58.7144242, 103.807234], [57.9155178, 105.9217041], [57.0426255, 108.0361741], [56.089271, 110.1506442], [55.0482128, 112.2651143], [53.911371, 114.3795843], [52.6697557, 116.4940544], [51.3134029, 118.6085245], [49.8313263, 120.7229945], [48.2114987, 122.8374646], [46.4408802, 124.9519347], [44.5055202, 127.0664047], [42.3907667, 129.1808748], [40.0816263, 131.2953449], [37.563328, 133.4098149], [34.822146, 135.524285]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "grey",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.5
+}
+                    )
+                    .addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+            
+    
+                var poly_line_3a30fef83802479b96f1b31fbf1fe5ab = L.polyline(
+                    [[49.874848, 8.656081], [49.1294675, 8.8189622], [48.3607453, 8.9818435], [47.5678643, 9.1447247], [46.7499925, 9.3076059], [45.9062861, 9.4704872], [45.0358923, 9.6333684], [44.1379534, 9.7962496], [43.2116111, 9.9591309], [42.2560117, 10.1220121], [41.2703126, 10.2848933], [40.253689, 10.4477746], [39.2053422, 10.6106558], [38.1245081, 10.773537], [37.0104678, 10.9364183], [35.8625586, 11.0992995], [34.6801861, 11.2621807], [33.4628377, 11.425062], [32.2100972, 11.5879432], [30.9216594, 11.7508244], [29.5973467, 11.9137057], [28.2371252, 12.0765869], [26.8411215, 12.2394681], [25.4096396, 12.4023494], [23.9431763, 12.5652306], [22.4424371, 12.7281118], [20.9083489, 12.8909931], [19.342072, 13.0538743], [17.7450083, 13.2167555], [16.118807, 13.3796368], [14.4653656, 13.542518], [12.7868274, 13.7053992], [11.0855732, 13.8682805], [9.364209, 14.0311617], [7.6255477, 14.1940429], [5.8725865, 14.3569242], [4.1084788, 14.5198054], [2.3365028, 14.6826866], [0.5600259, 14.8455679], [-1.2175326, 15.0084491], [-2.992741, 15.1713303], [-4.7621947, 15.3342116], [-6.522555, 15.4970928], [-8.2705858, 15.659974], [-10.0031882, 15.8228553], [-11.71743, 15.9857365], [-13.4105727, 16.1486177], [-15.0800915, 16.311499], [-16.7236924, 16.4743802], [-18.3393224, 16.6372614], [-19.9251756, 16.8001427], [-21.4796948, 16.9630239], [-23.0015683, 17.1259051], [-24.4897233, 17.2887864], [-25.9433162, 17.4516676], [-27.3617205, 17.6145488], [-28.7445124, 17.7774301], [-30.0914555, 17.9403113], [-31.4024845, 18.1031925], [-32.6776884, 18.2660738], [-33.917294, 18.428955]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "grey",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.5
+}
+                    )
+                    .addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+            
+    
+                var poly_line_fd11a341547142719786a85ecc6f937b = L.polyline(
+                    [[49.874848, 8.656081], [50.2572014, 7.3269479], [50.6185919, 5.9978147], [50.9596163, 4.6686816], [51.280837, 3.3395485], [51.5827828, 2.0104153], [51.8659496, 0.6812822], [52.1308015, -0.6478509], [52.3777713, -1.9769841], [52.6072615, -3.3061172], [52.8196453, -4.6352503], [53.0152669, -5.9643835], [53.1944424, -7.2935166], [53.3574606, -8.6226497], [53.5045838, -9.9517829], [53.6360477, -11.280916], [53.7520628, -12.6100491], [53.8528142, -13.9391823], [53.9384626, -15.2683154], [54.0091441, -16.5974485], [54.0649711, -17.9265817], [54.1060321, -19.2557148], [54.1323922, -20.5848479], [54.1440931, -21.9139811], [54.1411534, -23.2431142], [54.1235684, -24.5722473], [54.0913103, -25.9013805], [54.044328, -27.2305136], [53.9825469, -28.5596467], [53.9058691, -29.8887799], [53.8141725, -31.217913], [53.7073114, -32.5470461], [53.5851152, -33.8761793], [53.4473888, -35.2053124], [53.2939115, -36.5344455], [53.1244369, -37.8635787], [52.9386924, -39.1927118], [52.7363782, -40.5218449], [52.5171669, -41.8509781], [52.2807027, -43.1801112], [52.026601, -44.5092443], [51.754447, -45.8383775], [51.4637955, -47.1675106], [51.1541697, -48.4966437], [50.8250606, -49.8257769], [50.475926, -51.15491], [50.1061898, -52.4840431], [49.7152412, -53.8131763], [49.3024339, -55.1423094], [48.8670856, -56.4714425], [48.4084772, -57.8005757], [47.9258526, -59.1297088], [47.4184185, -60.4588419], [46.8853442, -61.7879751], [46.3257617, -63.1171082], [45.7387668, -64.4462413], [45.1234195, -65.7753745], [44.4787459, -67.1045076], [43.8037396, -68.4336407], [43.0973652, -69.7627739], [42.358561, -71.091907]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "grey",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.5
+}
+                    )
+                    .addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+            
+    
+                var poly_line_fc56a0d8416a484ea47b9510b8639da4 = L.polyline(
+                    [[49.874848, 8.656081], [51.9339201, 10.867484], [53.7819543, 13.078887], [55.4429752, 15.29029], [56.9382141, 17.5016929], [58.2862916, 19.7130959], [59.503461, 21.9244989], [60.6038707, 24.1359019], [61.5998203, 26.3473049], [62.5019982, 28.5587079], [63.3196945, 30.7701108], [64.0609891, 32.9815138], [64.7329149, 35.1929168], [65.3415986, 37.4043198], [65.8923808, 39.6157228], [66.3899193, 41.8271257], [66.8382764, 44.0385287], [67.2409931, 46.2499317], [67.6011524, 48.4613347], [67.9214327, 50.6727377], [68.2041528, 52.8841407], [68.4513102, 55.0955437], [68.6646131, 57.3069466], [68.8455069, 59.5183496], [68.9951966, 61.7297526], [69.1146649, 63.9411556], [69.2046868, 66.1525586], [69.2658405, 68.3639616], [69.2985162, 70.5753645], [69.3029216, 72.7867675], [69.2790845, 74.9981705], [69.2268536, 77.2095735], [69.1458963, 79.4209765], [69.0356936, 81.6323795], [68.8955332, 83.8437824], [68.7244986, 86.0551854], [68.521456, 88.2665884], [68.2850371, 90.4779914], [68.0136184, 92.6893944], [67.705296, 94.9007974], [67.357855, 97.1122003], [66.9687339, 99.3236033], [66.5349813, 101.5350063], [66.0532054, 103.7464093], [65.519514, 105.9578123], [64.9294442, 108.1692152], [64.2778785, 110.3806182], [63.5589477, 112.5920212], [62.7659161, 114.8034242], [61.8910468, 117.0148272], [60.9254465, 119.2262302], [59.858885, 121.4376331], [58.6795902, 123.6490361], [57.3740175, 125.8604391], [55.9265989, 128.0718421], [54.3194804, 130.2832451], [52.5322693, 132.4946481], [50.5418262, 134.706051], [48.3221648, 136.917454], [45.8445596, 139.128857], [43.078012, 141.34026]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "grey",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.5
+}
+                    )
+                    .addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+            
+    
+                var poly_line_0c4003b4d42e48cbb8f736483ffdd243 = L.polyline(
+                    [[52.000844, 4.371367], [52.3483789, 2.8450186], [52.6711648, 1.3186703], [52.9699223, -0.2076781], [53.2453156, -1.7340265], [53.4979546, -3.2603748], [53.7283965, -4.7867232], [53.9371476, -6.3130716], [54.1246648, -7.8394199], [54.2913571, -9.3657683], [54.4375869, -10.8921167], [54.5636709, -12.418465], [54.6698816, -13.9448134], [54.756448, -15.4711618], [54.8235563, -16.9975101], [54.8713506, -18.5238585], [54.8999334, -20.0502069], [54.909366, -21.5765552], [54.8996685, -23.1029036], [54.8708202, -24.629252], [54.8227593, -26.1556003], [54.7553827, -27.6819487], [54.6685457, -29.2082971], [54.5620615, -30.7346454], [54.4357006, -32.2609938], [54.2891898, -33.7873422], [54.1222118, -35.3136905], [53.9344035, -36.8400389], [53.7253553, -38.3663873], [53.4946097, -39.8927356], [53.2416596, -41.419084], [52.9659471, -42.9454324], [52.6668616, -44.4717807], [52.3437381, -45.9981291], [51.9958553, -47.5244775], [51.6224337, -49.0508258], [51.2226339, -50.5771742], [50.7955542, -52.1035226], [50.340229, -53.6298709], [49.8556271, -55.1562193], [49.3406494, -56.6825677], [48.7941283, -58.208916], [48.2148261, -59.7352644], [47.601434, -61.2616128], [46.9525728, -62.7879611], [46.2667928, -64.3143095], [45.5425757, -65.8406579], [44.7783368, -67.3670062], [43.9724298, -68.8933546], [43.1231517, -70.419703], [42.228751, -71.9460513], [41.2874381, -73.4723997], [40.2973974, -74.9987481], [39.2568044, -76.5250964], [38.163845, -78.0514448], [37.0167401, -79.5777932], [35.8137737, -81.1041415], [34.5533272, -82.6304899], [33.2339183, -84.1568383], [31.8542454, -85.6831866], [30.413238, -87.209535]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "grey",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.5
+}
+                    )
+                    .addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+            
+    
+                var poly_line_f279d80055c3452e88d6063966796f74 = L.polyline(
+                    [[49.874848, 8.656081], [50.3019765, 8.1484744], [50.719398, 7.6408678], [51.1273483, 7.1332612], [51.5260579, 6.6256545], [51.9157522, 6.1180479], [52.2966514, 5.6104413], [52.6689703, 5.1028347], [53.0329187, 4.5952281], [53.3887009, 4.0876215], [53.7365163, 3.5800148], [54.076559, 3.0724082], [54.4090183, 2.5648016], [54.7340782, 2.057195], [55.051918, 1.5495884], [55.3627121, 1.0419818], [55.6666303, 0.5343751], [55.9638375, 0.0267685], [56.2544943, -0.4808381], [56.5387566, -0.9884447], [56.8167762, -1.4960513], [57.0887003, -2.0036579], [57.3546723, -2.5112646], [57.6148312, -3.0188712], [57.8693123, -3.5264778], [58.1182469, -4.0340844], [58.3617625, -4.541691], [58.599983, -5.0492976], [58.8330287, -5.5569043], [59.0610164, -6.0645109], [59.2840596, -6.5721175], [59.5022684, -7.0797241], [59.7157498, -7.5873307], [59.9246075, -8.0949373], [60.1289425, -8.602544], [60.3288524, -9.1101506], [60.5244325, -9.6177572], [60.7157748, -10.1253638], [60.902969, -10.6329704], [61.0861019, -11.140577], [61.2652579, -11.6481837], [61.4405189, -12.1557903], [61.6119645, -12.6633969], [61.7796719, -13.1710035], [61.9437158, -13.6786101], [62.1041691, -14.1862167], [62.2611024, -14.6938234], [62.4145842, -15.20143], [62.5646809, -15.7090366], [62.7114572, -16.2166432], [62.8549756, -16.7242498], [62.9952971, -17.2318564], [63.1324807, -17.7394631], [63.2665835, -18.2470697], [63.3976613, -18.7546763], [63.525768, -19.2622829], [63.6509559, -19.7698895], [63.7732759, -20.2774961], [63.8927773, -20.7851028], [64.0095078, -21.2927094], [64.123514, -21.800316]],
+                    {
+  "bubblingMouseEvents": true,
+  "color": "grey",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "grey",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "noClip": false,
+  "opacity": 1,
+  "smoothFactor": 1.0,
+  "stroke": true,
+  "weight": 2.5
+}
+                    )
+                    .addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+            
+    
+            L.control.fullscreen({
+                position: 'topright',
+                title: 'Expand me',
+                titleCancel: 'Exit me',
+                forceSeparateButton: true,
+                }).addTo(map_9dc8308f8f6c4b3eb26b90932db348e8);
+            map_9dc8308f8f6c4b3eb26b90932db348e8.on('enterFullscreen', function(){
+                console.log('entered fullscreen');
+            });
+
+        
+    
+                    map_9dc8308f8f6c4b3eb26b90932db348e8.scrollEnabled = true;
+
+                    map_9dc8308f8f6c4b3eb26b90932db348e8.toggleScroll = function() {
+                        if (this.scrollEnabled) {
+                            this.scrollEnabled = false;
+                            this.scrollWheelZoom.disable();
+                            }
+                        else {
+                            this.scrollEnabled = true;
+                            this.scrollWheelZoom.enable();
+                            }
+                        };
+
+                    map_9dc8308f8f6c4b3eb26b90932db348e8.toggleScroll();
+            
+</script>
